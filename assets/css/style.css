@@ -18,9 +18,6 @@ h1 {
     color:  red;
     text-shadow: 2px 2px black;
 }
-img {
-    height:  300px;
-}
 label,
 #topicInput {
     height: 50px;
@@ -51,6 +48,10 @@ label {
 #addInput:hover {
     color: red;
 }
+.gifImage {
+    height:  125px;
+    margin: 10px;
+}
 
 /* media queries */
 
@@ -59,26 +60,27 @@ label {
         font-size: 30px;
     }
     .btn {
-        font-size: 14px;
-    }
-    img {
-        height: 200px;
+        font-size: 12px;
     }
     #topicButton .btn {
-        font-size:  12px;
+        font-size:  10px;
     }
     label {
         height: 24px;
-        font-size: 18px;
+        font-size: 14px;
     }
     #topicInput {
         height: 30px;
         width:  250px;
-        font-size:  14px;
+        font-size:  10px;
     }
     #addInput {
         height: 30px;
-        font-size: 14px;
+        font-size: 12px;
+    }
+    .gifImage {
+        height:  60px;
+        margin: 5px;
     }
 }
 
@@ -88,9 +90,6 @@ label {
     }
     .btn {
         font-size: 16px;
-    }
-    img {
-        height: 200px;
     }
     #topicButton .btn {
         font-size:  14px;
@@ -107,6 +106,10 @@ label {
     #addInput {
         height: 35px;
         font-size: 16px;
+    }
+    .gifImage {
+        height:  75px;
+        margin: 8px;
     }
 }
 
@@ -129,6 +132,10 @@ label {
         height: 35px;
         font-size: 16px;
     }
+    .gifImage {
+        height:  90px;
+        margin: 10px;
+    }
 }
 
 @media screen and (min-width: 716px) and (max-width: 991px) {
@@ -142,5 +149,9 @@ label {
     #addInput {
         height: 40px;
         font-size: 18px;
+    }
+    .gifImage {
+        height:  100px;
+        margin: 10px;
     }
 }
