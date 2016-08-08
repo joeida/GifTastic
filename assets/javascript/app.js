@@ -12,6 +12,7 @@ var compute = {
         $('#topicInput').val('');
     },
 
+    // Remove existing topic button from existing topic list and render button
     removeTopic: function(removeItem) {
         var index = topic.indexOf(removeItem);
         topic.splice(index, 1);
@@ -31,7 +32,6 @@ var compute = {
         output.displayTopic(name);
         $.ajax({url: queryURL, method: 'GET'})
         .done(function(response) {
-            // output.clearGif();
             for (var i = 0; i < response.data.length; i++) {
                 animateGif = response.data[i].images.fixed_height.url;
                 stillGif = response.data[i].images.fixed_height_still.url;
@@ -133,6 +133,7 @@ $(document).ready(function() {
         }
     });
 
+    // Remove topic from topic list and display topic buttons for updated list
     $('#topicButton').on('click', '.removeTopic', function() {
         var topic = $(this).attr('data-state');
         compute.removeTopic(topic);
