@@ -85,6 +85,9 @@ p {
         height: 30px;
         font-size: 12px;
     }
+    h3 {
+        font-size: 16px;
+    }
     .gifImage {
         height:  60px;
         margin: 5px;
