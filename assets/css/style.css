@@ -1,0 +1,146 @@
+/* global */
+
+body {
+    background:  url('../images/movie-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Indie Flower', cursive;
+    color: silver;
+}
+.container {
+    text-align:  center;
+}
+
+/* general */
+
+h1 {
+    font-size: 80px;
+    font-family: 'Shadows Into Light', cursive;
+    color:  red;
+    text-shadow: 2px 2px black;
+}
+img {
+    height:  300px;
+}
+label,
+#topicInput {
+    height: 50px;
+    width: 400px;
+    font-size: 24px;
+    opacity: 0.90;
+}
+#topicButton .btn {
+    margin: 0 10px 20px;
+    color: black;
+    font-size:  18px;
+    text-shadow: -1px 0 silver,0 1px silver,1px 0 silver,0 -1px silver;
+}
+#topicButton .btn:hover {
+    color: red;
+}
+label {
+    font-size: 28px;
+    text-shadow: -1.5px 0 red,0 1.5px red,1.5px 0 red,0 -1.5px red;
+}
+#addInput {
+    margin: 0 0 0 10px;
+    height:  45px;
+    color: black;
+    font-size: 24px;
+    text-shadow: -1px 0 silver,0 1px silver,1px 0 silver,0 -1px silver;
+}
+#addInput:hover {
+    color: red;
+}
+
+/* media queries */
+
+@media screen and (max-width: 442px) {
+    h1 {
+        font-size: 30px;
+    }
+    .btn {
+        font-size: 14px;
+    }
+    img {
+        height: 200px;
+    }
+    #topicButton .btn {
+        font-size:  12px;
+    }
+    label {
+        height: 24px;
+        font-size: 18px;
+    }
+    #topicInput {
+        height: 30px;
+        width:  250px;
+        font-size:  14px;
+    }
+    #addInput {
+        height: 30px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 443px) and (max-width: 601px) {
+    h1 {
+        font-size: 40px;
+    }
+    .btn {
+        font-size: 16px;
+    }
+    img {
+        height: 200px;
+    }
+    #topicButton .btn {
+        font-size:  14px;
+    }
+    label {
+        height: 30px;
+        font-size: 20px;
+    }
+    #topicInput {
+        height: 35px;
+        width:  300px;
+        font-size:  16px;
+    }
+    #addInput {
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 602px) and (max-width: 715px) {
+    h1 {
+        font-size: 50px;
+    }
+    .btn {
+        font-size: 16px;
+    }
+    #topicButton .btn {
+        font-size:  14px;
+    }
+    #topicInput {
+        height: 40px;
+        width:  325px;
+        font-size:  16px;
+    }
+    #addInput {
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 716px) and (max-width: 991px) {
+    h1 {
+        font-size: 60px;
+    }
+    #topicInput {
+        height: 45px;
+        font-size: 18px;
+    }
+    #addInput {
+        height: 40px;
+        font-size: 18px;
+    }
+}
