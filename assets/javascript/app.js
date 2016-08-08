@@ -18,7 +18,7 @@ var compute = {
         var animateGif;
         var stillGif;
         var query = $(this).data('name').replace(/\s+/g, '+');
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + query + "&limit=10&rating=pg-13&api_key=dc6zaTOxFJmzC";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + query + "&limit=10&rating=pg-13&api_key=dc6zaTOxFJmzC";
         $.ajax({url: queryURL, method: 'GET'})
         .done(function(response) {
             output.clearGif();
