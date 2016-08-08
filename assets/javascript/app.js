@@ -12,6 +12,12 @@ var compute = {
         $('#topicInput').val('');
     },
 
+    removeTopic: function(removeItem) {
+        var index = topic.indexOf(removeItem);
+        topic.splice(index, 1);
+        output.renderButtons();
+    },
+
     // Get Gif from Giphy API based on topic with limit 10 and rating of PG-13
     // Display resulting Gif stills
     getGif: function() {
@@ -41,11 +47,21 @@ var output = {
     renderButtons: function() {
         $('#topicButton').empty();
         for (var i = 0; i < topic.length; i++) {
-           var tb = $('<button>');
-           tb.addClass('movie btn btn-success');
-           tb.attr('data-name', topic[i]);
-           tb.text(topic[i]);
-           $('#topicButton').append(tb); 
+            var btnDiv = $('<div>');
+            btnDiv.css('display', 'inline-block');
+            var removeA = $('<a>');
+            removeA.addClass('removeTopic');
+            removeA.attr('data-name', topic[i]);
+            var removeGlyph = $('<span>');
+            removeGlyph.addClass('glyphicon glyphicon-remove-sign');
+            var tb = $('<button>');
+            tb.addClass('movie btn btn-success');
+            tb.attr('data-name', topic[i]);
+            tb.text(topic[i]);
+            removeA.append(removeGlyph);
+            btnDiv.append(tb);
+            btnDiv.append(removeA);
+            $('#topicButton').append(btnDiv); 
         }
     },
 
@@ -115,5 +131,10 @@ $(document).ready(function() {
         } else {
             output.still(this);
         }
+    });
+
+    $('#topicButton').on('click', '.removeTopic', function() {
+        var topic = $(this).attr('data-state');
+        compute.removeTopic(topic);
     });
 });
