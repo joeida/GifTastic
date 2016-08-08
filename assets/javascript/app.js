@@ -17,15 +17,20 @@ var compute = {
     getGif: function() {
         var animateGif;
         var stillGif;
+        var ratingGif;
+        var name = $(this).data('name');
         var query = $(this).data('name').replace(/\s+/g, '+');
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + query + "&limit=10&rating=pg-13&api_key=dc6zaTOxFJmzC";
+        output.clearGif();
+        output.displayTopic(name);
         $.ajax({url: queryURL, method: 'GET'})
         .done(function(response) {
-            output.clearGif();
+            // output.clearGif();
             for (var i = 0; i < response.data.length; i++) {
                 animateGif = response.data[i].images.fixed_height.url;
                 stillGif = response.data[i].images.fixed_height_still.url;
-                output.displayGif(animateGif, stillGif);
+                ratingGif = response.data[i].rating;
+                output.displayGif(animateGif, stillGif, ratingGif);
             }
         });
     }
@@ -45,14 +50,30 @@ var output = {
     },
 
     // Display Gif image with data attributes of still and animated images
-    displayGif: function(animateGif, stillGif) {
+    displayGif: function(animateGif, stillGif, ratingGif) {
+
+        var imgDiv = $('<div>');
+        imgDiv.css('display', 'inline-block');
+        var rating = $('<p>');
+        rating.text('Rated: ' + ratingGif);
         var imgGif = $('<img>');
         imgGif.attr('src', stillGif);
         imgGif.attr('data-still', stillGif);
         imgGif.attr('data-animate', animateGif);
         imgGif.attr('data-state', 'still');
+        imgGif.attr('data-rating', ratingGif);
         imgGif.addClass('gifImage');
-        $('#topicGifOutput').append(imgGif);
+        imgDiv.append(imgGif);
+        imgDiv.append(rating);
+
+        $('#topicGifOutput').append(imgDiv);
+    },
+
+    // Display selected topic
+    displayTopic: function(name) {
+        var topicHeader = $('<h3>');
+        topicHeader.text(name);
+        $('#topicGifOutput').append(topicHeader);
     },
 
     // Clear Gif image output to be used when choosing a new topic
