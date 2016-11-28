@@ -4,7 +4,7 @@
 * Create Application to look up TV and Movies Gifs using HTML, CSS, Javascript.
 
 ### Objective
-* Use HTML, CSS, and Javascript to create a basic Gif lookup application.
+* Demonstrate the use of HTML, CSS, and Javascript in the creation of a basic Gif lookup application.
   1. Create list of pre-populated TV shows and movies which get generated as buttons which can be removed from the page.
   2. Create input and submit field for adding new TV or Movie shows.
   3. Create deletable button for each topic search item so they can be chosen.
